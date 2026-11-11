@@ -1,0 +1,14 @@
+{
+  "name": "on-this-day-scraper",
+  "version": "1.0.0",
+  "description": "Fetches and displays historical events for today's date.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
