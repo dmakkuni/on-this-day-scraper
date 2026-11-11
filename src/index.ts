@@ -1,6 +1,6 @@
 interface WikipediaEvent {
-  year: number;
-  text: string;
+  year: string;
+  description: string;
 }
 
 interface WikipediaResponse {
@@ -18,7 +18,7 @@ async function fetchTodayInHistory() {
   try {
     console.log(`Fetching historical events for ${month}/${day}...\n`);
     const response = await fetch(url);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -26,12 +26,12 @@ async function fetchTodayInHistory() {
     const data: WikipediaResponse = await response.json();
 
     console.log(`=== On This Day (${data.date}) ===\n`);
-    
-    // Display a random selection of 5 historical events
+
+    // Display a random selection of 5 historical events.
     const sampleEvents = data.events.sort(() => 0.5 - Math.random()).slice(0, 5);
-    
+
     sampleEvents.forEach(event => {
-      console.log(`• [${event.year}] ${event.text}`);
+      console.log(`• [${event.year}] ${event.description}`);
     });
 
   } catch (error) {

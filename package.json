@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node dist/index.js"
+    "start": "tsc && node dist/index.js",
+    "test": "npm run build && node --test"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
